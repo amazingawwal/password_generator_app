@@ -181,10 +181,10 @@ console.log(typeof(userInputInt))
         }
       }
       if (confirmLowerCase) {
-        // pass+=lowerCase.join()
-        for (var i=0; i<lowerCase.length; i++){
-          pass+=lowerCase[i]
-        }
+        pass+=lowerCase.join("")
+        // for (var i=0; i<lowerCase.length; i++){
+        //   pass+=lowerCase[i]
+        //}
       }
       if (confirmNumeric) {
         // pass+=numbers.join()
@@ -211,6 +211,7 @@ console.log(typeof(userInputInt))
   }
   
   console.log(gen)
+  return gen
   
   // var passWd = pass[passIndex]
   // console.log(passWd)
