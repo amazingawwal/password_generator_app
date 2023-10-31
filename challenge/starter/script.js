@@ -88,63 +88,63 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-var userInput = prompt("Enter a number that signifies the length of password");
-var userInputInt = parseInt(userInput)
-console.log(typeof(userInputInt))
+// var userInput = prompt("Enter a number that signifies the length of password");
+// var userInputInt = parseInt(userInput)
+// console.log(typeof(userInputInt))
 
-if (userInputInt >= 8 && userInputInt <=128){
-  var confirmUpperCase = confirm("Do you want to include upper case letters in your password")
-  var confirmLowerCase = confirm("Do you want to include lower case letters in your password")
-  var confirmNumeric = confirm("Do you want to include numbers in your password")
-  var confirmSpecialChar = confirm("Do you want to include special characters in your password")
-  console.log(confirmSpecialChar)
+// if (userInputInt >= 8 && userInputInt <=128){
+//   var confirmUpperCase = confirm("Do you want to include upper case letters in your password")
+//   var confirmLowerCase = confirm("Do you want to include lower case letters in your password")
+//   var confirmNumeric = confirm("Do you want to include numbers in your password")
+//   var confirmSpecialChar = confirm("Do you want to include special characters in your password")
+//   console.log(confirmSpecialChar)
 
-  var pass = ""
-  var gen = ""
+//   var pass = ""
+//   var gen = ""
 
-  function myPassword(upperCase,lowerCase,numbers,special){
-    if (confirmUpperCase) {
-      // pass = pass+=upperCase.join()
-      for (var i=0; i<upperCase.length; i++){
-        pass+=upperCase[i]
-      }
-    }
-    if (confirmLowerCase) {
-      // pass+=lowerCase.join()
-      for (var i=0; i<lowerCase.length; i++){
-        pass+=lowerCase[i]
-      }
-    }
-    if (confirmNumeric) {
-      // pass+=numbers.join()
-      for (var i=0; i<numbers.length; i++){
-        pass+=numbers[i]
-      }
-    }
-    if (confirmSpecialChar) {
-      // pass+=special.join()
-      for (var i=0; i<special.length; i++){
-        pass+=special
-      }
-    }
-  }
-  myPassword(upperCasedCharacters,lowerCasedCharacters,numericCharacters,specialCharacters)
+//   function myPassword(upperCase,lowerCase,numbers,special){
+//     if (confirmUpperCase) {
+//       // pass = pass+=upperCase.join()
+//       for (var i=0; i<upperCase.length; i++){
+//         pass+=upperCase[i]
+//       }
+//     }
+//     if (confirmLowerCase) {
+//       // pass+=lowerCase.join()
+//       for (var i=0; i<lowerCase.length; i++){
+//         pass+=lowerCase[i]
+//       }
+//     }
+//     if (confirmNumeric) {
+//       // pass+=numbers.join()
+//       for (var i=0; i<numbers.length; i++){
+//         pass+=numbers[i]
+//       }
+//     }
+//     if (confirmSpecialChar) {
+//       // pass+=special.join()
+//       for (var i=0; i<special.length; i++){
+//         pass+=special[i]
+//       }
+//     }
+//   }
+//   myPassword(upperCasedCharacters,lowerCasedCharacters,numericCharacters,specialCharacters)
 
-  console.log(typeof(pass))
-  console.log(pass)
+//   console.log(typeof(pass))
+//   console.log(pass)
 
-for (var i=0; (i<=userInputInt-1); i++){
-  var passIndex = Math.floor(Math.random()*pass.length)
-  gen+=pass[passIndex]
+// for (var i=0; (i<=userInputInt-1); i++){
+//   var passIndex = Math.floor(Math.random()*pass.length)
+//   gen+=pass[passIndex]
   
-}
-console.log(gen)
+// }
+// console.log(gen)
 
-// var passWd = pass[passIndex]
-// console.log(passWd)
-}
+// // var passWd = pass[passIndex]
+// // console.log(passWd)
+// }
 
-else{alert("Enter a number from 8 to 128")}
+// else{alert("Enter a number from 8 to 128")}
 
 
 // Function to prompt user for password options
@@ -159,6 +159,64 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  var userInput = prompt("Enter a number that signifies the length of password");
+var userInputInt = parseInt(userInput)
+console.log(typeof(userInputInt))
+
+  if (userInputInt >= 8 && userInputInt <=128){
+    var confirmUpperCase = confirm("Do you want to include upper case letters in your password")
+    var confirmLowerCase = confirm("Do you want to include lower case letters in your password")
+    var confirmNumeric = confirm("Do you want to include numbers in your password")
+    var confirmSpecialChar = confirm("Do you want to include special characters in your password")
+    console.log(confirmSpecialChar)
+  
+    var pass = ""
+    var gen = ""
+  
+    function myPassword(upperCase,lowerCase,numbers,special){
+      if (confirmUpperCase) {
+        // pass = pass+=upperCase.join()
+        for (var i=0; i<upperCase.length; i++){
+          pass+=upperCase[i]
+        }
+      }
+      if (confirmLowerCase) {
+        // pass+=lowerCase.join()
+        for (var i=0; i<lowerCase.length; i++){
+          pass+=lowerCase[i]
+        }
+      }
+      if (confirmNumeric) {
+        // pass+=numbers.join()
+        for (var i=0; i<numbers.length; i++){
+          pass+=numbers[i]
+        }
+      }
+      if (confirmSpecialChar) {
+        // pass+=special.join()
+        for (var i=0; i<special.length; i++){
+          pass+=special[i]
+        }
+      }
+    }
+    myPassword(upperCasedCharacters,lowerCasedCharacters,numericCharacters,specialCharacters)
+  
+    console.log(typeof(pass))
+    console.log(pass)
+  
+  for (var i=0; (i<=userInputInt-1); i++){
+    var passIndex = Math.floor(Math.random()*pass.length)
+    gen+=pass[passIndex]
+    
+  }
+  
+  console.log(gen)
+  
+  // var passWd = pass[passIndex]
+  // console.log(passWd)
+  }
+  
+  else{alert("Enter a number from 8 to 128")}
 
 }
 
