@@ -147,32 +147,25 @@ var upperCasedCharacters = [
 // else{alert("Enter a number from 8 to 128")}
 
 
-// Function to prompt user for password options
-function getPasswordOptions() {
 
-}
-
-// Function for getting a random element from an array
-function getRandom(arr) {
-
-}
 
 // Function to generate password with user input
 function generatePassword() {
+  //User input to get password length
   var userInput = prompt("Enter a number that signifies the length of password");
-var userInputInt = parseInt(userInput)
-console.log(typeof(userInputInt))
-
+  var userInputInt = parseInt(userInput)
+  console.log(typeof(userInputInt))
+// User input to get confirmation for characters
   if (userInputInt >= 8 && userInputInt <=128){
     var confirmUpperCase = confirm("Do you want to include upper case letters in your password")
     var confirmLowerCase = confirm("Do you want to include lower case letters in your password")
     var confirmNumeric = confirm("Do you want to include numbers in your password")
     var confirmSpecialChar = confirm("Do you want to include special characters in your password")
     console.log(confirmSpecialChar)
-  
+  // variable declaration for password and generatedPassword
     var pass = ""
     var gen = ""
-  
+  // function to get arrays into string
     function myPassword(upperCase,lowerCase,numbers,special){
       if (confirmUpperCase) {
         // pass = pass+=upperCase.join()
@@ -181,10 +174,10 @@ console.log(typeof(userInputInt))
         }
       }
       if (confirmLowerCase) {
-        pass+=lowerCase.join("")
-        // for (var i=0; i<lowerCase.length; i++){
-        //   pass+=lowerCase[i]
-        //}
+        // pass+=lowerCase.join("")
+        for (var i=0; i<lowerCase.length; i++){
+          pass+=lowerCase[i]
+        }
       }
       if (confirmNumeric) {
         // pass+=numbers.join()
@@ -203,20 +196,20 @@ console.log(typeof(userInputInt))
   
     console.log(typeof(pass))
     console.log(pass)
-  
+// for-loop to get randomly generate password from the collected string   
   for (var i=0; (i<=userInputInt-1); i++){
     var passIndex = Math.floor(Math.random()*pass.length)
     gen+=pass[passIndex]
     
   }
-  
+ //return generate password 
   console.log(gen)
   return gen
   
   // var passWd = pass[passIndex]
   // console.log(passWd)
   }
-  
+// else statement to get user enter a password length of 8-128  
   else{alert("Enter a number from 8 to 128")}
 
 }
